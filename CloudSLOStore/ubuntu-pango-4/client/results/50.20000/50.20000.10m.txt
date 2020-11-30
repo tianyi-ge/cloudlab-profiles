@@ -1,0 +1,41 @@
+mongo client connection created with mongodb://10.10.1.2:27017/ycsb?replicaSet=rs0&w=majority&journal=true
+Raw data measurement: will output to result file: raw.csv
+Raw data measurement: will output to result file: raw.csv
+[OVERALL], RunTime(ms), 1103675
+[OVERALL], Throughput(ops/sec), 9060.638321969784
+[TOTAL_GCS_PS_Scavenge], Count, 470
+[TOTAL_GC_TIME_PS_Scavenge], Time(ms), 9801
+[TOTAL_GC_TIME_%_PS_Scavenge], Time(%), 0.8880331619362584
+[TOTAL_GCS_PS_MarkSweep], Count, 0
+[TOTAL_GC_TIME_PS_MarkSweep], Time(ms), 0
+[TOTAL_GC_TIME_%_PS_MarkSweep], Time(%), 0.0
+[TOTAL_GCs], Count, 470
+[TOTAL_GC_TIME], Time(ms), 9801
+[TOTAL_GC_TIME_%], Time(%), 0.8880331619362584
+[CLEANUP], Total Operations, 50
+[CLEANUP], Below is a summary of latency in microseconds:, -1
+[CLEANUP], Average, 135.92
+[CLEANUP], Min, 1
+[CLEANUP], Max, 6686
+[CLEANUP], p1, 1
+[CLEANUP], p5, 1
+[CLEANUP], p50, 1
+[CLEANUP], p90, 4
+[CLEANUP], p95, 13
+[CLEANUP], p99, 6686
+[CLEANUP], p99.9, 6686
+[CLEANUP], p99.99, 6686
+[INSERT], Total Operations, 10000000
+[INSERT], Below is a summary of latency in microseconds:, -1
+[INSERT], Average, 5507.162841
+[INSERT], Min, 1583
+[INSERT], Max, 2979123
+[INSERT], p1, 3256
+[INSERT], p5, 3795
+[INSERT], p50, 4984
+[INSERT], p90, 5949
+[INSERT], p95, 6285
+[INSERT], p99, 7301
+[INSERT], p99.9, 55099
+[INSERT], p99.99, 964335
+[INSERT], Return=OK, 10000000

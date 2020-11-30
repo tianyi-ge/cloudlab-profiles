@@ -1,0 +1,28 @@
+MongoDB shell version v4.4.0
+connecting to: mongodb://127.0.0.1:27017/ycsb?compressors=disabled&gssapiServiceName=mongodb
+Implicit session: session { "id" : UUID("07db5267-96d5-4f40-9300-397588319cf9") }
+MongoDB server version: 4.4.0
+{
+	"db" : "ycsb",
+	"collections" : 1,
+	"views" : 0,
+	"objects" : 10000000,
+	"avgObjSize" : 1167.8795517,
+	"dataSize" : 11678795517,
+	"storageSize" : 12318502912,
+	"indexes" : 1,
+	"indexSize" : 526290944,
+	"totalSize" : 12844793856,
+	"scaleFactor" : 1,
+	"fsUsedSize" : 49367838720,
+	"fsTotalSize" : 448240435200,
+	"ok" : 1,
+	"$clusterTime" : {
+		"clusterTime" : Timestamp(1606723302, 1),
+		"signature" : {
+			"hash" : BinData(0,"AAAAAAAAAAAAAAAAAAAAAAAAAAA="),
+			"keyId" : NumberLong(0)
+		}
+	},
+	"operationTime" : Timestamp(1606723302, 1)
+}
