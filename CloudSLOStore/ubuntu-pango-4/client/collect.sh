@@ -1,7 +1,7 @@
 #!/bin/sh
 
-scp tianyige@hp034.utah.cloudlab.us:~/mnt/*.txt results/
-scp tianyige@hp040.utah.cloudlab.us:~/mnt/*.txt results/
-scp tianyige@hp020.utah.cloudlab.us:~/mnt/*.txt results/
-scp tianyige@hp033.utah.cloudlab.us:~/mnt/*.txt results/
+scp 'tianyige@10.10.1.2:~/mnt/*.txt' results/
+scp 'tianyige@10.10.1.3:~/mnt/*.txt' results/
+scp 'tianyige@10.10.1.4:~/mnt/*.txt' results/
+scp 'tianyige@10.10.1.5:~/mnt/*.txt' results/
 
