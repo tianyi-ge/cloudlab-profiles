@@ -4,7 +4,7 @@ throu=$2
 req=$3
 group=$thread.$throu.$req
 
-ssh tianyige@hp009.utah.cloudlab.us "~/mnt/run.sh $1 $2 $3";
+# ssh tianyige@hp009.utah.cloudlab.us "cd ~/mnt && ./run.sh $1 $2 $3";
 
 [ ! -d $group ] && mkdir $group
 
