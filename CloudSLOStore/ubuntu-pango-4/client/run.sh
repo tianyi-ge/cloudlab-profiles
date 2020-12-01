@@ -10,7 +10,7 @@ ycsb/bin/ycsb run mongodb -s -p mongodb.url=$url -p operationcount=$req -P ycsb/
 
 for id in 2 3 4 5
 do
-	ssh -p 22 10.10.1.$id "sudo kill -9 `pidof iostat` `pidof top`";
+	ssh -p 22 10.10.1.$id "sudo kill -9 \`pidof iostat\` \`pidof top\`";
 	ssh -p 22 10.10.1.$id "~/mnt/clean.sh";
 done
 
