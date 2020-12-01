@@ -1,25 +1,16 @@
+#!/bin/sh
+
 # disk io
-id=1
+id=$1
 sec=1
-pid=`pidof mongod`
-pidstat -d $sec -p $pid > io.$id.txt &
 
-# cpu
-pidstat -u $sec -p $pid > cpu.$id.txt &
-
-kill `pidof pidstat`
-
-# disk storage
-mongo ycsb --eval 'db.stats()' > storage.txt
-
-# cpu wa + mongod
-top -p `pidof mongod` -b | grep '%Cpu\|mongod' > wa_cpu.$id.txt &
-grep '%Cpu' wa_cpu.$id.txt | awk '{ print $10 }' > wa.$id.txt
-grep 'mongod' wa_cpu.$id.txt | awk '{ print $8 }' > cpu.$id.txt
+# cpu usage (>100%)
+top -b | awk 'BEGIN{print "usage"}/mongod/ {print $9};fflush(stdout)' > cpu.$id.txt &
 
 # disk r, w, %
-sudo iotop -b | grep mongod | awk '{ print $4,$6,$10 }'
+disk='sda4'
+sudo iostat -x $disk $sec | awk 'BEGIN{print "rkB/s\twkB/s\tutil"}/sda4/{print $4"\t"$5"\t"$16; fflush(stdout)}' > disk.$id.txt &
+sudo iostat -x $disk $sec | awk 'BEGIN{print "iowait\tidle"}/avg-cpu/{getline;print$4"\t"$6; fflush(stdout)}' > iowait.$id.txt &
 
-# disk + network busy %
-atop | grep 'DSK |\|NET | ens1f1' > dsk.$ip.txt # ens1f1 is interface name
+# sudo kill -9 `pidof iostat` `pidof top`
 
