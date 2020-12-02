@@ -8,6 +8,6 @@ updateproportion=0
 scanproportion=0
 insertproportion=1.0
 measurementtype=raw
-measurement.raw.output_file=raw.csv
+measurement.raw.output_file=/dev/null
 requestdistribution=zipfian
 

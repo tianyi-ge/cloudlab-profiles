@@ -2,7 +2,7 @@
 
 1. Copy the folders onto nodes
 
-2. Run `./start.sh` on each mongodb server
+2. Run `./start.sh <id> [None|ec]` on each mongodb server
 
 3. Run `mongo` on majority and paste the first command in `mongo_config.js`
    ```js
@@ -22,10 +22,10 @@
    
 4. wait until it becomes primary
 
-5. Back to client `~/mnt`, run `./run.sh <thread> <throu> <ops>` (e.g. ``./run.sh 60 10000 1000000``)
+5. Back to client `~/mnt`, run `./run.sh <thread> <throu> <ops> [None|ec]` (e.g. ``./run.sh 60 10000 1000000 ec``)
 
    1. It's majority by default
    2. It starts monitor on each mongodb server
    3. When it ends, all the db servers are closed; all the data are collected
 
-1. Run `./main <thread> <throu> <ops>` on local machine to retrieve the data.
+6. Run `./retrive <thread> <throu> <ops> [None|ec]` on local machine to retrieve the data.

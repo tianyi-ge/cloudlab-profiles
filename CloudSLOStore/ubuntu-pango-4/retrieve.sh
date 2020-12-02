@@ -2,9 +2,10 @@
 thread=$1
 throu=$2
 req=$3
-group=$thread.$throu.$req
+type=$4 # < mongod | mongod.ec >
+group=$thread.$throu.$req.$type
 
-# ssh tianyige@hp009.utah.cloudlab.us "cd ~/mnt && ./run.sh $1 $2 $3";
+# ssh tianyige@hp009.utah.cloudlab.us "cd ~/mnt && ./run.sh $1 $2 $3 $4";
 
 [ ! -d $group ] && mkdir $group
 

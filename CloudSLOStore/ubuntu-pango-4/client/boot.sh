@@ -71,3 +71,12 @@ wget https://github.com/brianfrankcooper/YCSB/releases/download/0.17.0/ycsb-mong
 tar xvf ycsb-mongodb-binding-0.17.0.tar.gz;
 mv ycsb-mongodb-binding-0.17.0 ycsb;
 rm *.tar.gz *.zip
+
+# copy
+cd ~/mnt/mongo/build/install/bin;
+strip -sg mongod -o mongodec;
+for id in 2 3 4 5
+do
+    scp ./mongodec tianyige@10.10.1.$id:~/mnt/mongodec;
+    ssh -p 22 10.10.1.$id "sudo ln -s ~/mnt/mongodec /usr/bin/mongodec";
+done
