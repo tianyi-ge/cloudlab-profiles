@@ -13,6 +13,7 @@ if [ -z "$4" ]; then
 else
 	url='mongodb://10.10.1.2:27017/ycsb?w=3&journal=true'
 	rend=5
+	ssh -p 22 10.10.1.2 "cd ~/mnt && mongo ycsb --eval \"db.createCollection('usertable')\""
 fi
 
 for (( id=2; id<=$rend; id++ )); do
